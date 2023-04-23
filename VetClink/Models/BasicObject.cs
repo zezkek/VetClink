@@ -28,7 +28,7 @@ namespace VetClink.Models
         public Guid Guid { get => _guid; set => _guid = value; }
 
         [DisplayName("Имя")]
-        public string Name { get => _name ?? "Имя не задано"; set => _name = value; }
+        public string? Name { get => _name ?? "Имя не задано"; set => _name = value; }
 
         #endregion
     }

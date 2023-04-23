@@ -18,7 +18,6 @@ namespace VetClink.Models
         #region Fieleds
 
         private WorkerType _workerType;
-        [AllowNull]
         private Worker _workerChief;
 
         #endregion
@@ -29,7 +28,7 @@ namespace VetClink.Models
         public WorkerType WorkerType { get => _workerType; set => _workerType = value; }
 
         [DisplayName("Начальник")]
-        public Worker WorkerChief { get => _workerChief; set => _workerChief = value; }
+        public Worker? WorkerChief { get => _workerChief; set => _workerChief = value; }
 
         #endregion
     }

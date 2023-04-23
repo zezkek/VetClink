@@ -16,16 +16,14 @@ namespace VetClink.Models
 
         #region Fields
 
-        [AllowNull]
         private ICollection<Animal> _animals;
 
         #endregion
 
         #region Properties
 
-        [AllowNull]
         [DisplayName("Питомцы")]
-        public ICollection<Animal> Animals { get => _animals; set => _animals = value; }
+        public ICollection<Animal>? Animals { get => _animals; set => _animals = value; }
 
         #endregion
     }

@@ -1,5 +1,8 @@
 using VetClink.Data;
 using Microsoft.EntityFrameworkCore;
+using VetClink.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace VetClink
 {
@@ -15,6 +18,12 @@ namespace VetClink
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"));
             });
+            builder.Services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
+            builder.Services.AddMemoryCache();
+            builder.Services.AddSession();
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie();
 
             var app = builder.Build();
 
@@ -36,6 +45,9 @@ namespace VetClink
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            BasicSeed.SeedData(app);
+            BasicSeed.SeedUsersAndRolesAsync(app).Wait();
 
             app.Run();
         }
