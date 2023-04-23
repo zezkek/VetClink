@@ -7,7 +7,6 @@ namespace VetClink.Models
     /// <summary>
     /// Базовый класс для всех объектов
     /// </summary>
-    [NotMapped]
     public class BasicObject
     {
         #region Constructor
@@ -26,7 +25,7 @@ namespace VetClink.Models
         #region Properties
 
         [Key]
-        public Guid Guid { get => _guid;}
+        public Guid Guid { get => _guid; set => _guid = value; }
 
         [DisplayName("Имя")]
         public string Name { get => _name ?? "Имя не задано"; set => _name = value; }

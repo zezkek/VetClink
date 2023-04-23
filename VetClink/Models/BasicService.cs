@@ -6,8 +6,7 @@ namespace VetClink.Models
     /// <summary>
     /// Базовый класс для всех предоставляемых услуг
     /// </summary>
-    [NotMapped]
-    public class BasicService
+    public class BasicService : BasicObject
     {
         #region Constructor
         public BasicService()
@@ -32,6 +31,7 @@ namespace VetClink.Models
         public string Title { get => _title; set => _title = value; }
 
         [DisplayName("Цена")]
+        [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get => _price; set => _price = value; }
 
         [DisplayName("Название")]
