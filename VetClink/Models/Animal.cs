@@ -19,7 +19,7 @@ namespace VetClink.Models
         private AnimalGender _gender;
         private AnimalType _animalType;
         private string? _animalSubType;
-        private int _age;
+        private int? _age;
         private Owner _owner;
 
         #endregion
@@ -33,14 +33,14 @@ namespace VetClink.Models
         public AnimalType AnimalType { get => _animalType; set => _animalType = value; }
 
         [DisplayName("Возраст")]
-        public int Age { get => _age; set => _age = value; }
+        public int? Age { get => _age; set => _age = value; }
 
         [Required]
         [DisplayName("Владелец")]
         public Owner Owner { get => _owner; set => _owner = value; }
 
         [DisplayName("Вид")]
-        public string AnimalSubType { get => _animalSubType ?? "Не задан"; set => _animalSubType = value; }
+        public string? AnimalSubType { get => _animalSubType ?? "Не задан"; set => _animalSubType = value; }
 
         #endregion
 

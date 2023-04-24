@@ -22,10 +22,10 @@ namespace VetClink.Models
 
         #region Fields
 
-        private string _adress;
-        private string _phone;
-        private string _email;
-        private AppUser _appUser;
+        private string? _adress;
+        private string? _phone;
+        private string? _email;
+        private AppUser? _appUser;
 
         #endregion
 
